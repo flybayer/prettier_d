@@ -7,7 +7,7 @@ module.exports.generateHelp = function() {
   const cp = require("child_process");
   const path = require("path");
 
-  const prettierPath = path.resolve(__dirname, "../node_modules/.bin/prettier");
+  const prettierPath = path.resolve(__dirname, "../../bin/prettier.js");
   const prettierHelpCommand = [
     prettierPath,
     "--help",

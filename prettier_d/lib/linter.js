@@ -141,7 +141,7 @@ function getCwdDeps(cwd, currentOptions) {
         throw Error(`No prettier found from ${cwd}`);
       }
       // module not found
-      prettierPath = resolve.sync("prettier");
+      prettierPath = resolve.sync(path.join(__dirname, "../.."));
     }
 
     cwdDeps = prettierMap[cwd] = {
