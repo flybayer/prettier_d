@@ -24,8 +24,6 @@
   ],
   "homepage": "https://github.com/josephfrazier/prettier_d",
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
     "test": "./test.sh",
     "prepublish": "npm test"
   },
@@ -54,8 +52,5 @@
     "README.md"
   ],
   "license": "MIT",
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-plugin-prettier": "^2.0.1"
-  }
+  "devDependencies": {}
 }

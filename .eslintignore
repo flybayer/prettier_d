@@ -6,3 +6,4 @@
 /dist/
 **/node_modules/**
 /website/static/lib/
+/prettier_d/test
