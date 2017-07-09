@@ -10,6 +10,7 @@ cache:
   yarn: true
   directories:
   - node_modules
+  - prettier_d/node_modules
   - $HOME/Library/Caches/Homebrew # https://stackoverflow.com/questions/39930171/cache-brew-builds-with-travis-ci/41386136#41386136
 script:
   - yarn lint
