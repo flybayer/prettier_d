@@ -1,30 +1,17 @@
 ---
+os:
+  - linux
+  - osx
 language: node_js
 node_js:
-  - 4
   - stable
+  - 6
 cache:
   yarn: true
   directories:
   - node_modules
-env:
-  - NODE_ENV=development
-  - NODE_ENV=production
-matrix:
-  allow_failures:
-    - env: NODE_ENV=production
-  fast_finish: true
-install:
-  - yarn install --production=false
-before_script:
-  - if [ "${NODE_ENV}" = "production" ]; then yarn build; fi
+  - $HOME/Library/Caches/Homebrew # https://stackoverflow.com/questions/39930171/cache-brew-builds-with-travis-ci/41386136#41386136
 script:
   - yarn lint
+  - (cd prettier_d && yarn)
   - AST_COMPARE=1 yarn test -- --runInBand
-deploy:
-  provider: script
-  script: website/deploy.sh
-  skip_cleanup: true  
-  on:
-    branch: master
-    node: stable

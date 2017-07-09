@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-set -euo pipefail # bash "strict mode"
+set -eo pipefail # bash "strict mode"
+
+if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install md5sha1sum; fi
 
 pushd test >/dev/null
 
